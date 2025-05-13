@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+/* Reset & globals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+    height: 100%;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Sans Serif', monospace;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* CSS vars for light/dark */
+:root {
+    --bg: #000;
+    --fg: #fff;
+    --border: #fff;
+    --link: #0f0;
+}
+
+body.light {
+  --bg: #fff;
+  --fg: #000;
+  --border: #000;
+  --link: #FF0000;
+}
+
+/* Containers */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 2px solid var(--border);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--border);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 1rem;
+}
+
+.toggle-btn {
+    background: var(--border);
+    color: var(--bg);
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 200px;
+    background: url('Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg') center/cover no-repeat;
+    border: 2px solid var(--border);
+}
+
+/* Content */
+.content h1 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .nav-links {
+      display: none;
+    }
+    .navbar {
+      justify-content: space-between;
+    }
 }
